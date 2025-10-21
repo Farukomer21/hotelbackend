@@ -1,0 +1,169 @@
+{
+  "info": {
+    "name": "hotelbackend-roompricing-service API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "createRoomPrice",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "ExampleValue",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"roomPriceId\": \"ID\",\n  \"roomId\": \"ID\",\n  \"price\": \"Double\",\n  \"validFrom\": \"Date\",\n  \"validTo\": \"Date\",\n  \"reason\": \"String\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{serviceUrl}}//v1/roomprices",
+          "host": [
+            "{{serviceUrl}}"
+          ],
+          "path": [
+            "v1",
+            "roomprices"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "getRoomPrice",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "ExampleValue",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{serviceUrl}}//v1/roomprices/:roomPriceId",
+          "host": [
+            "{{serviceUrl}}"
+          ],
+          "path": [
+            "v1",
+            "roomprices",
+            ":roomPriceId"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "updateRoomPrice",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "ExampleValue",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PATCH",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"price\": \"Double\",\n  \"validFrom\": \"Date\",\n  \"validTo\": \"Date\",\n  \"reason\": \"String\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{serviceUrl}}//v1/roomprices/:roomPriceId",
+          "host": [
+            "{{serviceUrl}}"
+          ],
+          "path": [
+            "v1",
+            "roomprices",
+            ":roomPriceId"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "deleteRoomPrice",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "ExampleValue",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "{{serviceUrl}}//v1/roomprices/:roomPriceId",
+          "host": [
+            "{{serviceUrl}}"
+          ],
+          "path": [
+            "v1",
+            "roomprices",
+            ":roomPriceId"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "listRoomPrices",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "ExampleValue",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{serviceUrl}}//v1/roomprices",
+          "host": [
+            "{{serviceUrl}}"
+          ],
+          "path": [
+            "v1",
+            "roomprices"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
