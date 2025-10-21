@@ -1,0 +1,169 @@
+{
+  "info": {
+    "name": "hotelbackend-roominventory-service API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "createRoom",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "ExampleValue",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"roomId\": \"ID\",\n  \"roomNumber\": \"String\",\n  \"type\": \"Enum\",\n  \"amenities\": \"String\",\n  \"floor\": \"Integer\",\n  \"description\": \"Text\",\n  \"occupancyLimit\": \"Integer\",\n  \"status\": \"Enum\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{serviceUrl}}//v1/rooms",
+          "host": [
+            "{{serviceUrl}}"
+          ],
+          "path": [
+            "v1",
+            "rooms"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "updateRoom",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "ExampleValue",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PATCH",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"roomNumber\": \"String\",\n  \"type\": \"Enum\",\n  \"amenities\": \"String\",\n  \"floor\": \"Integer\",\n  \"description\": \"Text\",\n  \"occupancyLimit\": \"Integer\",\n  \"status\": \"Enum\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{serviceUrl}}//v1/rooms/:roomId",
+          "host": [
+            "{{serviceUrl}}"
+          ],
+          "path": [
+            "v1",
+            "rooms",
+            ":roomId"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "deleteRoom",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "ExampleValue",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "{{serviceUrl}}//v1/rooms/:roomId",
+          "host": [
+            "{{serviceUrl}}"
+          ],
+          "path": [
+            "v1",
+            "rooms",
+            ":roomId"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "getRoom",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "ExampleValue",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{serviceUrl}}//v1/rooms/:roomId",
+          "host": [
+            "{{serviceUrl}}"
+          ],
+          "path": [
+            "v1",
+            "rooms",
+            ":roomId"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "listRooms",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "ExampleValue",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{serviceUrl}}//v1/rooms",
+          "host": [
+            "{{serviceUrl}}"
+          ],
+          "path": [
+            "v1",
+            "rooms"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
