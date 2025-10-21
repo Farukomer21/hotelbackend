@@ -1,0 +1,42 @@
+
+syntax = "proto3";
+
+package paymentManagement;
+
+import "google/protobuf/struct.proto";
+import "google/protobuf/timestamp.proto";
+message payment {
+    string id = 1;
+    string reservationId = 2;
+    double amount = 3;
+    string currency = 4;
+    int32 paymentMethod = 5;
+    google.protobuf.Timestamp paidAt = 6;
+    int32 status = 7;
+    string reference = 8;
+}
+
+
+
+
+message VoidRequest {}
+
+message CurrentUserReply {
+    string userId = 1;
+    string sessionId = 2;
+    string fullname = 3;
+    string email = 4;
+    string roleId = 5;
+    string avatar = 6;
+    bool emailVerified = 7;
+        string accessToken = 8;
+}
+
+message HelloMessageReply {
+    string hello = 1;
+}
+
+service paymentManagementService {
+    rpc currentUser(VoidRequest) returns (CurrentUserReply);
+    rpc helloMessage(VoidRequest) returns (HelloMessageReply);
+}

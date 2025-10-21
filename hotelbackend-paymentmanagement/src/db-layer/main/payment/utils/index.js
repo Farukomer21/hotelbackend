@@ -1,0 +1,15 @@
+module.exports = {
+  createPayment: require("./createPayment"),
+  getIdListOfPaymentByField: require("./getIdListOfPaymentByField"),
+  getPaymentById: require("./getPaymentById"),
+  getPaymentAggById: require("./getPaymentAggById"),
+  getPaymentListByQuery: require("./getPaymentListByQuery"),
+  getPaymentStatsByQuery: require("./getPaymentStatsByQuery"),
+  getPaymentByQuery: require("./getPaymentByQuery"),
+  updatePaymentById: require("./updatePaymentById"),
+  updatePaymentByIdList: require("./updatePaymentByIdList"),
+  updatePaymentByQuery: require("./updatePaymentByQuery"),
+  deletePaymentById: require("./deletePaymentById"),
+  deletePaymentByQuery: require("./deletePaymentByQuery"),
+  getPaymentByReservationId: require("./getPaymentByReservationId"),
+};
