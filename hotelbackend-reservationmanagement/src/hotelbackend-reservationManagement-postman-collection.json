@@ -1,0 +1,236 @@
+{
+  "info": {
+    "name": "hotelbackend-reservationmanagement-service API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "createReservation",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "ExampleValue",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"reservationId\": \"ID\",\n  \"reservationCode\": \"String\",\n  \"guestId\": \"ID\",\n  \"roomId\": \"ID\",\n  \"packageIds\": \"ID\",\n  \"checkInDate\": \"Date\",\n  \"checkOutDate\": \"Date\",\n  \"status\": \"Enum\",\n  \"specialRequestIds\": \"ID\",\n  \"paymentStatus\": \"Enum\",\n  \"totalAmount\": \"Double\",\n  \"notes\": \"Text\",\n  \"numGuests\": \"Integer\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{serviceUrl}}//v1/reservations",
+          "host": [
+            "{{serviceUrl}}"
+          ],
+          "path": [
+            "v1",
+            "reservations"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "getReservationById",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "ExampleValue",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{serviceUrl}}//v1/reservations/:reservationId",
+          "host": [
+            "{{serviceUrl}}"
+          ],
+          "path": [
+            "v1",
+            "reservations",
+            ":reservationId"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "getReservationByCode",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "ExampleValue",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{serviceUrl}}//v1/reservationbycode/:reservationId",
+          "host": [
+            "{{serviceUrl}}"
+          ],
+          "path": [
+            "v1",
+            "reservationbycode",
+            ":reservationId"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "updateReservation",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "ExampleValue",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PATCH",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"guestId\": \"ID\",\n  \"roomId\": \"ID\",\n  \"packageIds\": \"ID\",\n  \"checkInDate\": \"Date\",\n  \"checkOutDate\": \"Date\",\n  \"status\": \"Enum\",\n  \"specialRequestIds\": \"ID\",\n  \"paymentStatus\": \"Enum\",\n  \"totalAmount\": \"Double\",\n  \"notes\": \"Text\",\n  \"numGuests\": \"Integer\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{serviceUrl}}//v1/reservations/:reservationId",
+          "host": [
+            "{{serviceUrl}}"
+          ],
+          "path": [
+            "v1",
+            "reservations",
+            ":reservationId"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "cancelReservationByCode",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "ExampleValue",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PATCH",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"guestId\": \"ID\",\n  \"roomId\": \"ID\",\n  \"packageIds\": \"ID\",\n  \"checkInDate\": \"Date\",\n  \"checkOutDate\": \"Date\",\n  \"status\": \"Enum\",\n  \"specialRequestIds\": \"ID\",\n  \"paymentStatus\": \"Enum\",\n  \"totalAmount\": \"Double\",\n  \"notes\": \"Text\",\n  \"numGuests\": \"Integer\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{serviceUrl}}//v1/cancelreservationbycode/:reservationId",
+          "host": [
+            "{{serviceUrl}}"
+          ],
+          "path": [
+            "v1",
+            "cancelreservationbycode",
+            ":reservationId"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "deleteReservation",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "ExampleValue",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "{{serviceUrl}}//v1/reservations/:reservationId",
+          "host": [
+            "{{serviceUrl}}"
+          ],
+          "path": [
+            "v1",
+            "reservations",
+            ":reservationId"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "listReservations",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "ExampleValue",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{serviceUrl}}//v1/reservations",
+          "host": [
+            "{{serviceUrl}}"
+          ],
+          "path": [
+            "v1",
+            "reservations"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
