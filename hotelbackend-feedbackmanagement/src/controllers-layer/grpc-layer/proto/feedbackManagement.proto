@@ -1,0 +1,41 @@
+
+syntax = "proto3";
+
+package feedbackManagement;
+
+import "google/protobuf/struct.proto";
+import "google/protobuf/timestamp.proto";
+message feedback {
+    string id = 1;
+    string reservationId = 2;
+    int32 rating = 3;
+    string comment = 4;
+    google.protobuf.Timestamp submittedAt = 5;
+    string response = 6;
+    string category = 7;
+}
+
+
+
+
+message VoidRequest {}
+
+message CurrentUserReply {
+    string userId = 1;
+    string sessionId = 2;
+    string fullname = 3;
+    string email = 4;
+    string roleId = 5;
+    string avatar = 6;
+    bool emailVerified = 7;
+        string accessToken = 8;
+}
+
+message HelloMessageReply {
+    string hello = 1;
+}
+
+service feedbackManagementService {
+    rpc currentUser(VoidRequest) returns (CurrentUserReply);
+    rpc helloMessage(VoidRequest) returns (HelloMessageReply);
+}
