@@ -1,0 +1,1202 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "hotelbackend-personnelmanagement-service API",
+    "description": "Handles CRUD for hotel personnel/staff records; supports full creation, update, view, and deletion for HR tracking. Not linked to auth, user management, or multi-hotel logic.",
+    "version": "1.0.0"
+  },
+  "servers": [],
+  "paths": {
+    "/v1/personnels": {
+      "post": {
+        "tags": [
+          "personnel"
+        ],
+        "summary": "The createPersonnel API has 8 parameters.",
+        "description": "createPersonnel",
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/createPersonnel"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/createPersonnel"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/createPersonnel"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Response JSON represents the most comprehensive form of the **personnel** object in the response. However, some properties may be omitted based on the object&#39;s internal logic.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/createPersonnel-Response"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/createPersonnel-Response"
+                }
+              },
+              "application/*+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/createPersonnel-Response"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "The request was improperly formatted or contained invalid parameters, preventing the server from processing it.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              },
+              "application/*+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "The request lacked valid authentication credentials or the credentials provided do not grant access to the requested resource.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              },
+              "application/*+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "The requested resource was not found on the server.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              },
+              "application/*+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "The server encountered an unexpected condition that prevented it from fulfilling the request.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              },
+              "application/*+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "personnels"
+        ],
+        "summary": "The listPersonnel API has no parameters.",
+        "description": "listPersonnel",
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/listPersonnel"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/listPersonnel"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/listPersonnel"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Response JSON represents the most comprehensive form of the **personnels** object in the response. However, some properties may be omitted based on the object&#39;s internal logic.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/listPersonnel-Response"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/listPersonnel-Response"
+                }
+              },
+              "application/*+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/listPersonnel-Response"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "The request was improperly formatted or contained invalid parameters, preventing the server from processing it.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              },
+              "application/*+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "The request lacked valid authentication credentials or the credentials provided do not grant access to the requested resource.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              },
+              "application/*+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "The requested resource was not found on the server.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              },
+              "application/*+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "The server encountered an unexpected condition that prevented it from fulfilling the request.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              },
+              "application/*+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/personnels/:personnelId": {
+      "get": {
+        "tags": [
+          "personnel"
+        ],
+        "summary": "The getPersonnel API has 1 parameter.",
+        "description": "getPersonnel",
+        "parameters": [
+          {
+            "name": "personnelId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/getPersonnel"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/getPersonnel"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/getPersonnel"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Response JSON represents the most comprehensive form of the **personnel** object in the response. However, some properties may be omitted based on the object&#39;s internal logic.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/getPersonnel-Response"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/getPersonnel-Response"
+                }
+              },
+              "application/*+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/getPersonnel-Response"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "The request was improperly formatted or contained invalid parameters, preventing the server from processing it.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              },
+              "application/*+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "The request lacked valid authentication credentials or the credentials provided do not grant access to the requested resource.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              },
+              "application/*+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "The requested resource was not found on the server.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              },
+              "application/*+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "The server encountered an unexpected condition that prevented it from fulfilling the request.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              },
+              "application/*+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      },
+      "patch": {
+        "tags": [
+          "personnel"
+        ],
+        "summary": "The updatePersonnel API has 9 parameters.",
+        "description": "updatePersonnel",
+        "parameters": [
+          {
+            "name": "personnelId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/updatePersonnel"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/updatePersonnel"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/updatePersonnel"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Response JSON represents the most comprehensive form of the **personnel** object in the response. However, some properties may be omitted based on the object&#39;s internal logic.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/updatePersonnel-Response"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/updatePersonnel-Response"
+                }
+              },
+              "application/*+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/updatePersonnel-Response"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "The request was improperly formatted or contained invalid parameters, preventing the server from processing it.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              },
+              "application/*+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "The request lacked valid authentication credentials or the credentials provided do not grant access to the requested resource.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              },
+              "application/*+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "The requested resource was not found on the server.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              },
+              "application/*+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "The server encountered an unexpected condition that prevented it from fulfilling the request.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              },
+              "application/*+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "personnel"
+        ],
+        "summary": "The deletePersonnel API has 1 parameter.",
+        "description": "deletePersonnel",
+        "parameters": [
+          {
+            "name": "personnelId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/deletePersonnel"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/deletePersonnel"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/deletePersonnel"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Response JSON represents the most comprehensive form of the **personnel** object in the response. However, some properties may be omitted based on the object&#39;s internal logic.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/deletePersonnel-Response"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/deletePersonnel-Response"
+                }
+              },
+              "application/*+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/deletePersonnel-Response"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "The request was improperly formatted or contained invalid parameters, preventing the server from processing it.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              },
+              "application/*+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "The request lacked valid authentication credentials or the credentials provided do not grant access to the requested resource.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              },
+              "application/*+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "The requested resource was not found on the server.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              },
+              "application/*+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "The server encountered an unexpected condition that prevented it from fulfilling the request.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              },
+              "application/*+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "ErrorResponse": {
+        "type": "object",
+        "properties": {
+          "result": {
+            "type": "string"
+          },
+          "status": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "message": {
+            "type": "string"
+          },
+          "errCode": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "date": {
+            "type": "string"
+          },
+          "detail": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      },
+      "createPersonnel": {
+        "type": "object",
+        "properties": {
+          "fullName": {
+            "type": "string",
+            "nullable": false
+          },
+          "jobTitle": {
+            "type": "string",
+            "nullable": false
+          },
+          "contactNumber": {
+            "type": "string",
+            "nullable": false
+          },
+          "email": {
+            "type": "string",
+            "nullable": true
+          },
+          "hireDate": {
+            "type": "string",
+            "nullable": false
+          },
+          "department": {
+            "type": "string",
+            "nullable": true
+          },
+          "status": {
+            "type": "string",
+            "nullable": false
+          },
+          "notes": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "listPersonnel": {
+        "type": "object",
+        "properties": {},
+        "additionalProperties": false
+      },
+      "getPersonnel": {
+        "type": "object",
+        "properties": {},
+        "additionalProperties": false
+      },
+      "updatePersonnel": {
+        "type": "object",
+        "properties": {
+          "fullName": {
+            "type": "string",
+            "nullable": true
+          },
+          "jobTitle": {
+            "type": "string",
+            "nullable": true
+          },
+          "contactNumber": {
+            "type": "string",
+            "nullable": true
+          },
+          "email": {
+            "type": "string",
+            "nullable": true
+          },
+          "hireDate": {
+            "type": "string",
+            "nullable": true
+          },
+          "department": {
+            "type": "string",
+            "nullable": true
+          },
+          "status": {
+            "type": "string",
+            "nullable": true
+          },
+          "notes": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "deletePersonnel": {
+        "type": "object",
+        "properties": {},
+        "additionalProperties": false
+      },
+      "createPersonnel-Response": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "string"
+          },
+          "statusCode": {
+            "type": "string"
+          },
+          "elapsedMs": {
+            "type": "number"
+          },
+          "ssoTime": {
+            "type": "number"
+          },
+          "source": {
+            "type": "string"
+          },
+          "cacheKey": {
+            "type": "string"
+          },
+          "userId": {
+            "type": "string"
+          },
+          "sessionId": {
+            "type": "string"
+          },
+          "requestId": {
+            "type": "string"
+          },
+          "dataName": {
+            "type": "string"
+          },
+          "method": {
+            "type": "string"
+          },
+          "action": {
+            "type": "string"
+          },
+          "appVersion": {
+            "type": "string"
+          },
+          "rowCount": {
+            "type": "number"
+          },
+          "personnel": {
+            "$ref": "#/components/schemas/personnel-object"
+          }
+        }
+      },
+      "listPersonnel-Response": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "string"
+          },
+          "statusCode": {
+            "type": "string"
+          },
+          "elapsedMs": {
+            "type": "number"
+          },
+          "ssoTime": {
+            "type": "number"
+          },
+          "source": {
+            "type": "string"
+          },
+          "cacheKey": {
+            "type": "string"
+          },
+          "userId": {
+            "type": "string"
+          },
+          "sessionId": {
+            "type": "string"
+          },
+          "requestId": {
+            "type": "string"
+          },
+          "dataName": {
+            "type": "string"
+          },
+          "method": {
+            "type": "string"
+          },
+          "action": {
+            "type": "string"
+          },
+          "appVersion": {
+            "type": "string"
+          },
+          "rowCount": {
+            "type": "string"
+          },
+          "personnels": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/personnels-object"
+            }
+          },
+          "paging": {
+            "$ref": "#/components/schemas/paging-object"
+          },
+          "filters": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "uiPermissions": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "getPersonnel-Response": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "string"
+          },
+          "statusCode": {
+            "type": "string"
+          },
+          "elapsedMs": {
+            "type": "number"
+          },
+          "ssoTime": {
+            "type": "number"
+          },
+          "source": {
+            "type": "string"
+          },
+          "cacheKey": {
+            "type": "string"
+          },
+          "userId": {
+            "type": "string"
+          },
+          "sessionId": {
+            "type": "string"
+          },
+          "requestId": {
+            "type": "string"
+          },
+          "dataName": {
+            "type": "string"
+          },
+          "method": {
+            "type": "string"
+          },
+          "action": {
+            "type": "string"
+          },
+          "appVersion": {
+            "type": "string"
+          },
+          "rowCount": {
+            "type": "number"
+          },
+          "personnel": {
+            "$ref": "#/components/schemas/personnel-object"
+          }
+        }
+      },
+      "updatePersonnel-Response": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "string"
+          },
+          "statusCode": {
+            "type": "string"
+          },
+          "elapsedMs": {
+            "type": "number"
+          },
+          "ssoTime": {
+            "type": "number"
+          },
+          "source": {
+            "type": "string"
+          },
+          "cacheKey": {
+            "type": "string"
+          },
+          "userId": {
+            "type": "string"
+          },
+          "sessionId": {
+            "type": "string"
+          },
+          "requestId": {
+            "type": "string"
+          },
+          "dataName": {
+            "type": "string"
+          },
+          "method": {
+            "type": "string"
+          },
+          "action": {
+            "type": "string"
+          },
+          "appVersion": {
+            "type": "string"
+          },
+          "rowCount": {
+            "type": "number"
+          },
+          "personnel": {
+            "$ref": "#/components/schemas/personnel-object"
+          }
+        }
+      },
+      "deletePersonnel-Response": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "string"
+          },
+          "statusCode": {
+            "type": "string"
+          },
+          "elapsedMs": {
+            "type": "number"
+          },
+          "ssoTime": {
+            "type": "number"
+          },
+          "source": {
+            "type": "string"
+          },
+          "cacheKey": {
+            "type": "string"
+          },
+          "userId": {
+            "type": "string"
+          },
+          "sessionId": {
+            "type": "string"
+          },
+          "requestId": {
+            "type": "string"
+          },
+          "dataName": {
+            "type": "string"
+          },
+          "method": {
+            "type": "string"
+          },
+          "action": {
+            "type": "string"
+          },
+          "appVersion": {
+            "type": "string"
+          },
+          "rowCount": {
+            "type": "number"
+          },
+          "personnel": {
+            "$ref": "#/components/schemas/personnel-object"
+          }
+        }
+      },
+      "personnel-object": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "_owner": {
+            "type": "string"
+          },
+          "fullName": {
+            "type": "string"
+          },
+          "jobTitle": {
+            "type": "string"
+          },
+          "contactNumber": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string"
+          },
+          "hireDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "department": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string"
+          },
+          "status_": {
+            "type": "string"
+          },
+          "notes": {
+            "type": "string"
+          },
+          "isActive": {
+            "type": "boolean"
+          },
+          "recordVersion": {
+            "type": "string"
+          },
+          "createdAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "updatedAt": {
+            "type": "string",
+            "format": "date-time"
+          }
+        }
+      },
+      "personnels-object": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "_owner": {
+            "type": "string"
+          },
+          "fullName": {
+            "type": "string"
+          },
+          "jobTitle": {
+            "type": "string"
+          },
+          "contactNumber": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string"
+          },
+          "hireDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "department": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string"
+          },
+          "status_": {
+            "type": "string"
+          },
+          "notes": {
+            "type": "string"
+          },
+          "isActive": {
+            "type": "boolean"
+          },
+          "recordVersion": {
+            "type": "string"
+          },
+          "createdAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "updatedAt": {
+            "type": "string",
+            "format": "date-time"
+          }
+        }
+      },
+      "paging-object": {
+        "type": "object",
+        "properties": {
+          "pageNumber": {
+            "type": "number"
+          },
+          "pageRowCount": {
+            "type": "number"
+          },
+          "totalRowCount": {
+            "type": "number"
+          },
+          "pageCount": {
+            "type": "number"
+          }
+        }
+      }
+    }
+  }
+}
