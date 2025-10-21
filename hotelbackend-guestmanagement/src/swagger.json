@@ -1,0 +1,1180 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "hotelbackend-guestmanagement-service API",
+    "description": "Handles all hotel guest records. Provides CRUD operations for adding, viewing, updating, and deleting guest details for single or group guests. Supports fullName, contact info, identification, and staff notes.",
+    "version": "1.0.0"
+  },
+  "servers": [],
+  "paths": {
+    "/v1/guests": {
+      "post": {
+        "tags": [
+          "guest"
+        ],
+        "summary": "The createGuest API has 7 parameters.",
+        "description": "createGuest",
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/createGuest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/createGuest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/createGuest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Response JSON represents the most comprehensive form of the **guest** object in the response. However, some properties may be omitted based on the object&#39;s internal logic.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/createGuest-Response"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/createGuest-Response"
+                }
+              },
+              "application/*+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/createGuest-Response"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "The request was improperly formatted or contained invalid parameters, preventing the server from processing it.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              },
+              "application/*+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "The request lacked valid authentication credentials or the credentials provided do not grant access to the requested resource.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              },
+              "application/*+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "The requested resource was not found on the server.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              },
+              "application/*+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "The server encountered an unexpected condition that prevented it from fulfilling the request.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              },
+              "application/*+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "guests"
+        ],
+        "summary": "The listGuests API has no parameters.",
+        "description": "listGuests",
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/listGuests"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/listGuests"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/listGuests"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Response JSON represents the most comprehensive form of the **guests** object in the response. However, some properties may be omitted based on the object&#39;s internal logic.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/listGuests-Response"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/listGuests-Response"
+                }
+              },
+              "application/*+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/listGuests-Response"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "The request was improperly formatted or contained invalid parameters, preventing the server from processing it.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              },
+              "application/*+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "The request lacked valid authentication credentials or the credentials provided do not grant access to the requested resource.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              },
+              "application/*+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "The requested resource was not found on the server.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              },
+              "application/*+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "The server encountered an unexpected condition that prevented it from fulfilling the request.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              },
+              "application/*+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/guests/:guestId": {
+      "get": {
+        "tags": [
+          "guest"
+        ],
+        "summary": "The getGuest API has 1 parameter.",
+        "description": "getGuest",
+        "parameters": [
+          {
+            "name": "guestId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/getGuest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/getGuest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/getGuest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Response JSON represents the most comprehensive form of the **guest** object in the response. However, some properties may be omitted based on the object&#39;s internal logic.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/getGuest-Response"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/getGuest-Response"
+                }
+              },
+              "application/*+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/getGuest-Response"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "The request was improperly formatted or contained invalid parameters, preventing the server from processing it.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              },
+              "application/*+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "The request lacked valid authentication credentials or the credentials provided do not grant access to the requested resource.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              },
+              "application/*+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "The requested resource was not found on the server.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              },
+              "application/*+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "The server encountered an unexpected condition that prevented it from fulfilling the request.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              },
+              "application/*+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      },
+      "patch": {
+        "tags": [
+          "guest"
+        ],
+        "summary": "The updateGuest API has 8 parameters.",
+        "description": "updateGuest",
+        "parameters": [
+          {
+            "name": "guestId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/updateGuest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/updateGuest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/updateGuest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Response JSON represents the most comprehensive form of the **guest** object in the response. However, some properties may be omitted based on the object&#39;s internal logic.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/updateGuest-Response"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/updateGuest-Response"
+                }
+              },
+              "application/*+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/updateGuest-Response"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "The request was improperly formatted or contained invalid parameters, preventing the server from processing it.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              },
+              "application/*+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "The request lacked valid authentication credentials or the credentials provided do not grant access to the requested resource.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              },
+              "application/*+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "The requested resource was not found on the server.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              },
+              "application/*+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "The server encountered an unexpected condition that prevented it from fulfilling the request.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              },
+              "application/*+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "guest"
+        ],
+        "summary": "The deleteGuest API has 1 parameter.",
+        "description": "deleteGuest",
+        "parameters": [
+          {
+            "name": "guestId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/deleteGuest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/deleteGuest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/deleteGuest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Response JSON represents the most comprehensive form of the **guest** object in the response. However, some properties may be omitted based on the object&#39;s internal logic.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/deleteGuest-Response"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/deleteGuest-Response"
+                }
+              },
+              "application/*+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/deleteGuest-Response"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "The request was improperly formatted or contained invalid parameters, preventing the server from processing it.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              },
+              "application/*+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "The request lacked valid authentication credentials or the credentials provided do not grant access to the requested resource.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              },
+              "application/*+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "The requested resource was not found on the server.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              },
+              "application/*+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "The server encountered an unexpected condition that prevented it from fulfilling the request.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              },
+              "application/*+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "ErrorResponse": {
+        "type": "object",
+        "properties": {
+          "result": {
+            "type": "string"
+          },
+          "status": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "message": {
+            "type": "string"
+          },
+          "errCode": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "date": {
+            "type": "string"
+          },
+          "detail": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      },
+      "createGuest": {
+        "type": "object",
+        "properties": {
+          "fullName": {
+            "type": "string",
+            "nullable": false
+          },
+          "contactNumber": {
+            "type": "string",
+            "nullable": false
+          },
+          "email": {
+            "type": "string",
+            "nullable": true
+          },
+          "address": {
+            "type": "string",
+            "nullable": true
+          },
+          "identificationType": {
+            "type": "string",
+            "nullable": true
+          },
+          "identificationNumber": {
+            "type": "string",
+            "nullable": true
+          },
+          "notes": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "listGuests": {
+        "type": "object",
+        "properties": {},
+        "additionalProperties": false
+      },
+      "getGuest": {
+        "type": "object",
+        "properties": {},
+        "additionalProperties": false
+      },
+      "updateGuest": {
+        "type": "object",
+        "properties": {
+          "fullName": {
+            "type": "string",
+            "nullable": true
+          },
+          "contactNumber": {
+            "type": "string",
+            "nullable": true
+          },
+          "email": {
+            "type": "string",
+            "nullable": true
+          },
+          "address": {
+            "type": "string",
+            "nullable": true
+          },
+          "identificationType": {
+            "type": "string",
+            "nullable": true
+          },
+          "identificationNumber": {
+            "type": "string",
+            "nullable": true
+          },
+          "notes": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "deleteGuest": {
+        "type": "object",
+        "properties": {},
+        "additionalProperties": false
+      },
+      "createGuest-Response": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "string"
+          },
+          "statusCode": {
+            "type": "string"
+          },
+          "elapsedMs": {
+            "type": "number"
+          },
+          "ssoTime": {
+            "type": "number"
+          },
+          "source": {
+            "type": "string"
+          },
+          "cacheKey": {
+            "type": "string"
+          },
+          "userId": {
+            "type": "string"
+          },
+          "sessionId": {
+            "type": "string"
+          },
+          "requestId": {
+            "type": "string"
+          },
+          "dataName": {
+            "type": "string"
+          },
+          "method": {
+            "type": "string"
+          },
+          "action": {
+            "type": "string"
+          },
+          "appVersion": {
+            "type": "string"
+          },
+          "rowCount": {
+            "type": "number"
+          },
+          "guest": {
+            "$ref": "#/components/schemas/guest-object"
+          }
+        }
+      },
+      "listGuests-Response": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "string"
+          },
+          "statusCode": {
+            "type": "string"
+          },
+          "elapsedMs": {
+            "type": "number"
+          },
+          "ssoTime": {
+            "type": "number"
+          },
+          "source": {
+            "type": "string"
+          },
+          "cacheKey": {
+            "type": "string"
+          },
+          "userId": {
+            "type": "string"
+          },
+          "sessionId": {
+            "type": "string"
+          },
+          "requestId": {
+            "type": "string"
+          },
+          "dataName": {
+            "type": "string"
+          },
+          "method": {
+            "type": "string"
+          },
+          "action": {
+            "type": "string"
+          },
+          "appVersion": {
+            "type": "string"
+          },
+          "rowCount": {
+            "type": "string"
+          },
+          "guests": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/guests-object"
+            }
+          },
+          "paging": {
+            "$ref": "#/components/schemas/paging-object"
+          },
+          "filters": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "uiPermissions": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "getGuest-Response": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "string"
+          },
+          "statusCode": {
+            "type": "string"
+          },
+          "elapsedMs": {
+            "type": "number"
+          },
+          "ssoTime": {
+            "type": "number"
+          },
+          "source": {
+            "type": "string"
+          },
+          "cacheKey": {
+            "type": "string"
+          },
+          "userId": {
+            "type": "string"
+          },
+          "sessionId": {
+            "type": "string"
+          },
+          "requestId": {
+            "type": "string"
+          },
+          "dataName": {
+            "type": "string"
+          },
+          "method": {
+            "type": "string"
+          },
+          "action": {
+            "type": "string"
+          },
+          "appVersion": {
+            "type": "string"
+          },
+          "rowCount": {
+            "type": "number"
+          },
+          "guest": {
+            "$ref": "#/components/schemas/guest-object"
+          }
+        }
+      },
+      "updateGuest-Response": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "string"
+          },
+          "statusCode": {
+            "type": "string"
+          },
+          "elapsedMs": {
+            "type": "number"
+          },
+          "ssoTime": {
+            "type": "number"
+          },
+          "source": {
+            "type": "string"
+          },
+          "cacheKey": {
+            "type": "string"
+          },
+          "userId": {
+            "type": "string"
+          },
+          "sessionId": {
+            "type": "string"
+          },
+          "requestId": {
+            "type": "string"
+          },
+          "dataName": {
+            "type": "string"
+          },
+          "method": {
+            "type": "string"
+          },
+          "action": {
+            "type": "string"
+          },
+          "appVersion": {
+            "type": "string"
+          },
+          "rowCount": {
+            "type": "number"
+          },
+          "guest": {
+            "$ref": "#/components/schemas/guest-object"
+          }
+        }
+      },
+      "deleteGuest-Response": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "string"
+          },
+          "statusCode": {
+            "type": "string"
+          },
+          "elapsedMs": {
+            "type": "number"
+          },
+          "ssoTime": {
+            "type": "number"
+          },
+          "source": {
+            "type": "string"
+          },
+          "cacheKey": {
+            "type": "string"
+          },
+          "userId": {
+            "type": "string"
+          },
+          "sessionId": {
+            "type": "string"
+          },
+          "requestId": {
+            "type": "string"
+          },
+          "dataName": {
+            "type": "string"
+          },
+          "method": {
+            "type": "string"
+          },
+          "action": {
+            "type": "string"
+          },
+          "appVersion": {
+            "type": "string"
+          },
+          "rowCount": {
+            "type": "number"
+          },
+          "guest": {
+            "$ref": "#/components/schemas/guest-object"
+          }
+        }
+      },
+      "guest-object": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "_owner": {
+            "type": "string"
+          },
+          "fullName": {
+            "type": "string"
+          },
+          "contactNumber": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string"
+          },
+          "address": {
+            "type": "string"
+          },
+          "identificationType": {
+            "type": "string"
+          },
+          "identificationNumber": {
+            "type": "string"
+          },
+          "notes": {
+            "type": "string"
+          },
+          "isActive": {
+            "type": "boolean"
+          },
+          "recordVersion": {
+            "type": "string"
+          },
+          "createdAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "updatedAt": {
+            "type": "string",
+            "format": "date-time"
+          }
+        }
+      },
+      "guests-object": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "_owner": {
+            "type": "string"
+          },
+          "fullName": {
+            "type": "string"
+          },
+          "contactNumber": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string"
+          },
+          "address": {
+            "type": "string"
+          },
+          "identificationType": {
+            "type": "string"
+          },
+          "identificationNumber": {
+            "type": "string"
+          },
+          "notes": {
+            "type": "string"
+          },
+          "isActive": {
+            "type": "boolean"
+          },
+          "recordVersion": {
+            "type": "string"
+          },
+          "createdAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "updatedAt": {
+            "type": "string",
+            "format": "date-time"
+          }
+        }
+      },
+      "paging-object": {
+        "type": "object",
+        "properties": {
+          "pageNumber": {
+            "type": "number"
+          },
+          "pageRowCount": {
+            "type": "number"
+          },
+          "totalRowCount": {
+            "type": "number"
+          },
+          "pageCount": {
+            "type": "number"
+          }
+        }
+      }
+    }
+  }
+}

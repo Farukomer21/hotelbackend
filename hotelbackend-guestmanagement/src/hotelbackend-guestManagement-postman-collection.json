@@ -1,0 +1,169 @@
+{
+  "info": {
+    "name": "hotelbackend-guestmanagement-service API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "createGuest",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "ExampleValue",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"guestId\": \"ID\",\n  \"fullName\": \"String\",\n  \"contactNumber\": \"String\",\n  \"email\": \"String\",\n  \"address\": \"Text\",\n  \"identificationType\": \"String\",\n  \"identificationNumber\": \"String\",\n  \"notes\": \"Text\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{serviceUrl}}//v1/guests",
+          "host": [
+            "{{serviceUrl}}"
+          ],
+          "path": [
+            "v1",
+            "guests"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "getGuest",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "ExampleValue",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{serviceUrl}}//v1/guests/:guestId",
+          "host": [
+            "{{serviceUrl}}"
+          ],
+          "path": [
+            "v1",
+            "guests",
+            ":guestId"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "updateGuest",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "ExampleValue",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PATCH",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"fullName\": \"String\",\n  \"contactNumber\": \"String\",\n  \"email\": \"String\",\n  \"address\": \"Text\",\n  \"identificationType\": \"String\",\n  \"identificationNumber\": \"String\",\n  \"notes\": \"Text\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{serviceUrl}}//v1/guests/:guestId",
+          "host": [
+            "{{serviceUrl}}"
+          ],
+          "path": [
+            "v1",
+            "guests",
+            ":guestId"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "deleteGuest",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "ExampleValue",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "{{serviceUrl}}//v1/guests/:guestId",
+          "host": [
+            "{{serviceUrl}}"
+          ],
+          "path": [
+            "v1",
+            "guests",
+            ":guestId"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "listGuests",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "ExampleValue",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{serviceUrl}}//v1/guests",
+          "host": [
+            "{{serviceUrl}}"
+          ],
+          "path": [
+            "v1",
+            "guests"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
