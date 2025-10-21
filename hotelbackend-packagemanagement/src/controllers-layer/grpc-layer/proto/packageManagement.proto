@@ -1,0 +1,40 @@
+
+syntax = "proto3";
+
+package packageManagement;
+
+import "google/protobuf/struct.proto";
+import "google/protobuf/timestamp.proto";
+message package_ {
+    string id = 1;
+    string name = 2;
+    string description = 3;
+    double price = 4;
+    google.protobuf.Timestamp availableFrom = 5;
+    google.protobuf.Timestamp availableTo = 6;
+}
+
+
+
+
+message VoidRequest {}
+
+message CurrentUserReply {
+    string userId = 1;
+    string sessionId = 2;
+    string fullname = 3;
+    string email = 4;
+    string roleId = 5;
+    string avatar = 6;
+    bool emailVerified = 7;
+        string accessToken = 8;
+}
+
+message HelloMessageReply {
+    string hello = 1;
+}
+
+service packageManagementService {
+    rpc currentUser(VoidRequest) returns (CurrentUserReply);
+    rpc helloMessage(VoidRequest) returns (HelloMessageReply);
+}
