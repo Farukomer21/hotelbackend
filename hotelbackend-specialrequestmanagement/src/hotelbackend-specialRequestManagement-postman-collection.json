@@ -1,0 +1,169 @@
+{
+  "info": {
+    "name": "hotelbackend-specialrequestmanagement-service API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "createSpecialRequest",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "ExampleValue",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"specialRequestId\": \"ID\",\n  \"reservationId\": \"ID\",\n  \"requestText\": \"String\",\n  \"status\": \"Enum\",\n  \"staffNote\": \"Text\",\n  \"submittedAt\": \"Date\",\n  \"resolvedAt\": \"Date\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{serviceUrl}}//v1/specialrequests",
+          "host": [
+            "{{serviceUrl}}"
+          ],
+          "path": [
+            "v1",
+            "specialrequests"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "getSpecialRequest",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "ExampleValue",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{serviceUrl}}//v1/specialrequests/:specialRequestId",
+          "host": [
+            "{{serviceUrl}}"
+          ],
+          "path": [
+            "v1",
+            "specialrequests",
+            ":specialRequestId"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "updateSpecialRequest",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "ExampleValue",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PATCH",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"status\": \"Enum\",\n  \"staffNote\": \"Text\",\n  \"resolvedAt\": \"Date\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{serviceUrl}}//v1/specialrequests/:specialRequestId",
+          "host": [
+            "{{serviceUrl}}"
+          ],
+          "path": [
+            "v1",
+            "specialrequests",
+            ":specialRequestId"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "deleteSpecialRequest",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "ExampleValue",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "{{serviceUrl}}//v1/specialrequests/:specialRequestId",
+          "host": [
+            "{{serviceUrl}}"
+          ],
+          "path": [
+            "v1",
+            "specialrequests",
+            ":specialRequestId"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "listSpecialRequests",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "ExampleValue",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{serviceUrl}}//v1/specialrequests",
+          "host": [
+            "{{serviceUrl}}"
+          ],
+          "path": [
+            "v1",
+            "specialrequests"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
